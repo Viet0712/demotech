@@ -1,0 +1,395 @@
+<style>
+  .container__product__detail {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  .baner__product__detail {
+    background-image: url("../image/cam-tu-cau-3.jpg");
+    background-size: cover;
+    /* Hiển thị hình nền sao cho nó che đậy hoàn toàn phần nền */
+    background-repeat: no-repeat;
+    margin-bottom: 2vw;
+    padding: 3vw 1vw;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .product__detail {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1fr;
+    gap: 1vw;
+    font-size: 1.3vw;
+  }
+
+  .product__detail__contact {
+    border: 0.1vw solid rgba(128, 128, 128, 0.233);
+  }
+
+  .product__detail__img__main {
+    width: 100%;
+  }
+
+  .product__detail__img__main > img {
+    width: 100%;
+  }
+
+  .product__detail__img__icon {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1vw;
+  }
+
+  .product__detail__img__icon > img {
+    width: 100%;
+  }
+
+  .product__detail__contact {
+    padding: 1vw 2vw;
+  }
+
+  .product__detail__describe__title {
+    font-size: 1.7vw;
+    font-weight: bold;
+    margin-bottom: 1vw;
+    border-bottom: 1vw solid green;
+  }
+
+  .product__detail__describe__price {
+    font-size: 2vw;
+    font-weight: 500;
+    margin-bottom: 1vw;
+  }
+
+  .product__detail__describe__content {
+    margin-bottom: 1.5vw;
+  }
+
+  .product__detail__describe__table {
+    padding: 0.3vw 0;
+    border-bottom: 0.1vw solid rgba(128, 128, 128, 0.322);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .title__table {
+    font-weight: 600;
+  }
+
+  .describe__table {
+    font-size: 1vw;
+  }
+
+  .product__purchase {
+    margin-top: 3vw;
+    height: auto;
+    display: flex;
+    column-gap: 2vw;
+    align-items: center;
+    font-size: 1.5vw;
+  }
+
+  .product__number {
+    height: 100%;
+  }
+
+  .product__number > span {
+    padding: 1vw;
+    margin: 0;
+    border: 0.1vw solid gray;
+  }
+
+  .sub__product,
+  .add__product {
+    cursor: pointer;
+  }
+
+  .product__purchase > button {
+    padding: 1vw 4vw;
+    margin: 0;
+    border: 0.1vw solid gray;
+    font-size: 1.5vw;
+    font-weight: bold;
+  }
+
+  .product__purchase > button:hover {
+    background-color: green;
+    color: white;
+  }
+
+  .product__detail__describe__right {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    margin: 2vw;
+  }
+
+  .product__detail__describe__right > img {
+    width: 100%;
+  }
+
+  .product__detail__describe__right__cs {
+    margin-left: 1vw;
+  }
+
+  .product__detail__contact > ul {
+    margin-bottom: 1vw;
+  }
+
+  .product__detail__contact__2 {
+    padding: 0.3vw;
+    border: 0.1vw solid rgba(128, 128, 128, 0.753);
+  }
+
+  .product__detail__contact ul > li {
+    list-style-type: none;
+  }
+
+  .product__detail__contact__link {
+    font-size: 1.3vw;
+    margin-left: 1vw;
+    margin-bottom: 2vw;
+  }
+
+  .product__detail__contact__link > a {
+    display: block;
+    color: black;
+    font-size: 1.3vw;
+    text-decoration: none;
+  }
+
+  .product__detail__contact__link a > .fa {
+    width: 1vw;
+    margin-right: 2vw;
+  }
+
+  .product__detail__chinhsach {
+    margin-top: 2vw;
+    border-top: 0.1vw solid rgba(128, 128, 128, 0.438);
+    font-size: 1.4vw;
+  }
+
+  .product__detail__chinhsach__title {
+    background-color: white;
+
+    font-size: 2vw;
+    font-weight: bold;
+    text-align: center;
+    padding: 2vw;
+  }
+
+  .product__detail__chinhsach__tyle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw;
+    margin: 3vw 0;
+  }
+
+  .chinhsach > h3 {
+    margin-bottom: 1.5vw;
+  }
+
+  .detail__contact__email {
+    margin-bottom: 1vw;
+  }
+
+  .suggest__product {
+    text-align: center;
+    font-size: 2vw;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 992px) {
+    .product__detail__chinhsach__tyle {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "stypea stypeb"
+        "stypec stypec";
+    }
+
+    .chinhsach1 {
+      grid-area: stypea;
+    }
+
+    .chinhsach2 {
+      grid-area: stypeb;
+    }
+
+    .chinhsach3 {
+      grid-area: stypec;
+      text-align: center;
+    }
+
+    .product__detail {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "detaila detailb"
+        "detailc detailc";
+    }
+
+    .product__detail__img {
+      grid-area: detaila;
+    }
+
+    .product__detail__describe {
+      grid-area: detailb;
+    }
+
+    .product__detail__contact {
+      grid-area: detailc;
+    }
+
+    .product__detail__contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media screen and (max-width: 687px) {
+    .product__detail__chinhsach__tyle {
+      display: block;
+    }
+
+    .product__detail {
+      display: block;
+      font-size: 3vw;
+    }
+
+    .product__detail__chinhsach {
+      font-size: 3vw;
+    }
+
+    .product__detail__describe__title {
+      font-size: 4vw;
+    }
+
+    .product__detail__describe__price {
+      font-size: 3.8vw;
+    }
+
+    .describe__table {
+      font-size: 3vw;
+    }
+
+    .suggest__product > p {
+      font-size: 3vw;
+      padding: 2vw;
+    }
+
+    .product__detail__chinhsach__title {
+      font-size: 3vw;
+    }
+
+    .product__detail__contact {
+      display: block;
+    }
+
+    .product__detail__contact__link > a {
+      font-size: 3vw;
+    }
+
+    .chinhsach3 {
+      text-align: left;
+    }
+
+    .chinhsach > p {
+      margin-bottom: 2vw;
+    }
+  }
+</style>
+
+<div ng-controller="product_detail">
+  <div class="container__product__detail">
+    <div class="product__detail" ng-controller="product_detail">
+      <div class="product__detail__img">
+        <div class="product__detail__img__main">
+          <img src="{{json.img}}" alt="" />
+        </div>
+        <!-- <div class="product__detail__img__icon">
+                <img src="image/cam-tu-cau-3.jpg" alt="">
+                <img src="image/cam-tu-cau-3.jpg" alt="">
+            </div> -->
+      </div>
+      <div class="product__detail__describe">
+        <p class="product__detail__describe__title">{{json.name}}</p>
+        <p class="product__detail__describe__price">{{json.price}}</p>
+        <p class="product__detail__describe__content">{{json.intro}}</p>
+        <p class="product__detail__describe__table"><span class="title__table">ID:</span><span class="describe__table"> {{json.id}}</span></p>
+        <p class="product__detail__describe__table"><span class="title__table">Light requirement:</span><span class="describe__table">{{json.p4}}</span></p>
+        <p class="product__detail__describe__table"><span class="title__table">Size</span><span class="describe__table">{{json.p2}}</span></p>
+        <p class="product__detail__describe__table"><span class="title__table">Water Requirement:</span><span class="describe__table">{{json.p3}}</span></p>
+        <div class="product__purchase">
+          <div class="product__number">
+            <span class="sub__product">-</span>
+            <span class="number__product">01</span>
+            <span class="add__product">+</span>
+          </div>
+          <button type="submit" ng-click="addToCart()">ADD TO CART</button>
+        </div>
+        <div class="product__detail__describe__right">
+          <img src="./image/money.png" alt="" />
+          <div class="product__detail__describe__right__cs">
+            <p>Chính sách đổi trả</p>
+            <p>Đổi trả trong vòng 3 ngày nếu không hài lòng</p>
+          </div>
+        </div>
+      </div>
+      <div class="product__detail__contact">
+        <ul class="product__detail__contact__1">
+          Quick order via hotline number (8h - 21h)
+          <li>Hotline 1: 0909009090</li>
+          <li>Hotline 2: 0808080800 (Zalo)</li>
+          <li>Hotline 3: 0707070707 (Telegram)</li>
+        </ul>
+
+        <ul class="product__detail__contact__2">
+          <li>Free shipping for orders over 1 million VNĐ (maximum 50.000VNĐ)</li>
+          <li>Delivery: From 1 to 7 days</li>
+          <li>Plant products including pots: Delivery only in Ho Chi Minh City</li>
+          <li>Small plants, pots, accessories, supplies: Nationwide delivery</li>
+        </ul>
+        <div class="product__detail__contact__link">
+          <a href=""><i class="fa fa-lock" aria-hidden="true"></i>Privacy Policy</a>
+          <a href=""><i class="fa fa-address-card" aria-hidden="true"></i>Payment Method</a>
+        </div>
+        <p>
+          Home's Plant understands that customer is afraid when buying online, so we will send actual photos before delivery. Only with the consent of the customer will the goods be delivered. In
+          order to ensure the quality of service and the interests of customers.
+        </p>
+      </div>
+    </div>
+
+    
+    <div class="product__detail__chinhsach">
+      <p class="product__detail__chinhsach__title">RETURN POLICY</p>
+      <p>
+        Home's Plant wants to bring the best shopping experience to its customers. Therefore, all products purchased at Home's Plant will be quality assured before reaching customers. We hope that you
+        will not only be satisfied with the product but also with the quality of service. If you have any problems, please contact Home's Plant immediately for resolution.
+      </p>
+      <div class="product__detail__chinhsach__tyle">
+        <div class="chinhsach chinhsach1">
+          <h3>Products are not tree</h3>
+          <p>For items that are not plants, you can completely return them within 30 days from the date of receipt, if the product encounters a manufacturer defect.</p>
+        </div>
+        <div class="chinhsach chinhsach2">
+          <h3>For small trees</h3>
+          <p>
+            All plants of small size (under 100cm) will be warranted by Home's Plant within 30 days. If the tree you received has a problem of irreversible weakening, please contact us immediately to
+            change a new tree.
+          </p>
+        </div>
+        <div class="chinhsach chinhsach3">
+          <h3>For large trees over 100cm</h3>
+          <p>For large trees over 100cm, when delivered and have problems with damage, wilting or weakening, please contact Home's Plant immediately to change new plants within 7 days.</p>
+        </div>
+      </div>
+      <p class="detail__contact__email">
+        To make an exchange, you can contact Home's Plant via hotline (08 9979 9968 or 09 6688 9393), fanpage or email support@mowgarden.com and provide complete information via the following form:
+      </p>
+      <li>Code Orders:</li>
+      <li>Customer Information:</li>
+      <li>Encountering Problem:</li>
+    </div>
+  </div>
+</div>

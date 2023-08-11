@@ -1,0 +1,84 @@
+<style>
+  .blog-container {
+    width: 70%;
+    height: auto;
+    margin: 0% 15%;
+    margin-top: 5vh;
+  }
+
+  .blog-container > h1 {
+    text-align: center;
+    margin-bottom: 4vw;
+    padding: 1.5vw;
+    background-color: #bedd93;
+    border-radius: 1vw 3vw 1vw 3vw;
+  }
+
+  .blog-container > h2 {
+    font-size: 2rem;
+    padding: 0.2vw 1vw;
+    margin-bottom: 1vw;
+    border-bottom: 5px solid transparent;
+    /* Đặt border ban đầu là transparent */
+    background-image: linear-gradient(to bottom, #bedd93, rgba(255, 0, 0, 0));
+    border-radius: 2vw 0 0 1vw;
+  }
+
+  .blog-container > span {
+    display: inline-block;
+    padding: 0 2vw;
+    font-size: 1.3rem;
+    margin-bottom: 5vh;
+    font-weight: 300;
+  }
+
+  .blog-container > img {
+    width: 60%;
+    height: auto;
+    margin: 0 20% 5vh;
+  }
+
+  .blog-container > p {
+    margin-top: 5vh;
+    font-size: 1.3rem;
+    margin-bottom: 5vh;
+  }
+
+  @media screen and (max-width: 992px) {
+    .blog-container > img {
+      width: 80%;
+      height: auto;
+      margin: 0 10% 5vh;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .blog-container > img {
+      width: 100%;
+      height: auto;
+      margin: 0 0 5vh;
+    }
+  }
+</style>
+
+<div ng-controller="blog-infor">
+  <div class="blog-container">
+    <h1>{{json.title}}</h1>
+    <span>{{json.intro}}</span>
+    <h2>{{json.tp1}}</h2>
+    <span ng-bind-html="p1">{{json.p1}}</span>
+    <img src="{{json.img1}}" alt="" />
+    <h2>{{json.tp2}}</h2>
+    <span ng-bind-html="p2">{{json.p2}}</span>
+    <h2>{{json.tp3}}</h2>
+    <span ng-bind-html="p3">{{json.p3}}</span>
+    <img src="{{json.img2}}" alt="" />
+    <h2>{{json.tp4}}</h2>
+    <span ng-bind-html="p4">{{json.p4}}</span>
+    <img src="{{json.img3}}" alt="" />
+    <h2>{{json.tp5}}</h2>
+    <span ng-bind-html="p5">{{json.p5}}</span>
+    <h2>{{json.tp6}}</h2>
+    <span ng-bind-html="p6">{{json.p6}}</span>
+  </div>
+</div>

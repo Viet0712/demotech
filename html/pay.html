@@ -1,0 +1,97 @@
+<style>
+  .pay {
+    /* padding: 3vw; */
+    border: 0.2vw solid rgb(0, 153, 20);
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  .form__pay {
+    padding: 2% 10% 5% 10%;
+  }
+
+  .border__lock__form {
+    margin-bottom: 2vw;
+    width: auto;
+  }
+
+  .border__cmt {
+    display: flex;
+  }
+
+  label {
+    display: inline-block;
+    width: 25%;
+    font-size: 20px;
+  }
+
+  .label__checkbox {
+    width: auto;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    width: 72.5%;
+    height: 40px;
+  }
+
+  #btn__payment {
+    width: 100%;
+    padding: 1vw 40%;
+    font-size: 2vw;
+    font-weight: bold;
+    background-color: rgb(213, 255, 178);
+    border: 0.2vw ridge rgb(0, 153, 20);
+  }
+
+  #btn__payment:hover {
+    width: 100%;
+    padding: 1vw 40%;
+    font-size: 2vw;
+    font-weight: bold;
+    background-color: yellowgreen;
+    border: 0.2vw ridge rgb(0, 153, 20);
+  }
+
+  .input__cmt {
+    width: 75%;
+    max-width: 75%;
+    height: 5vw;
+    font-size: 2vw;
+  }
+
+  .h2_formpay {
+    font-size: 2vw;
+    text-align: center;
+    color: rgb(0, 153, 20);
+  }
+</style>
+
+<div ng-controller="formPayController">
+  <div class="pay">
+    <form action="" class="form__pay" onsubmit="sNotification()">
+      <h2 class="h2_formpay">SHIPPING INFORMATION</h2>
+      <div class="border__receiver border__lock__form">
+        <label for="">Receiver: </label>
+        <input type="text" name="receiver" id="receiver" placeholder="Enter You Name" required />
+      </div>
+      <div class="border__phone border__lock__form">
+        <label for="">Phone: </label>
+        <input type="number" name="phone" id="phone" placeholder="Enter You Phone" required />
+      </div>
+      <div class="border__address border__lock__form">
+        <label for="">Address: </label>
+        <input type="text" name="address" id="address" placeholder="Enter your delivery address" required />
+      </div>
+      <div class="border__cmt border__lock__form">
+        <label for="">Note: </label>
+        <textarea name="" id="" cols="30" rows="10" class="input__cmt"></textarea>
+      </div>
+      <div class="border__payment border__lock__form">
+        <input type="checkbox" name="payment" id="payment" checked />
+        <label for="" class="label__checkbox">Payment on delivery</label>
+      </div>
+      <input type="submit" value="Order" id="btn__payment" />
+    </form>
+  </div>
+</div>

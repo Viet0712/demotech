@@ -1,0 +1,356 @@
+<style>
+  .carousel-card-1,
+  .carousel-card-2,
+  .carousel-card-3 {
+    position: relative;
+    width: 100%;
+    margin: auto;
+
+    > img {
+      width: 100%;
+    }
+  }
+
+  @keyframes carousel {
+    from {
+      transform: translateY(-50%);
+      opacity: 0.4;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .carousel-container {
+    position: absolute;
+    z-index: 1;
+    color: black;
+    left: 0;
+    top: 0;
+    padding-left: 10%;
+    padding-top: 10%;
+    width: 40%;
+    animation-name: carousel;
+    animation-duration: 2s;
+
+    > h2 {
+      font-size: 3rem;
+      background-color: black;
+      color: white;
+      width: fit-content;
+      padding: 0.5rem 2rem;
+    }
+
+    > p {
+      font-size: 1.3rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    > button {
+      color: black;
+      padding: 0.4rem 1rem;
+      font-weight: 900;
+      border-radius: 50px;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+
+      > i {
+        color: black;
+        border-radius: 50%;
+        font-size: 1rem;
+        background-color: yellowgreen;
+        padding: 0.5rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .slick--container {
+    width: 80%;
+    max-width: 1320px;
+    margin: auto;
+  }
+
+  .slick--quote {
+    background-color: rgba(154, 205, 50, 0.1);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    color: rgb(204, 51, 0);
+    font-weight: 800;
+  }
+
+  .my-slick {
+    max-width: 2000px;
+    margin: auto;
+  }
+
+  .slick--img {
+    position: relative;
+    text-align: center;
+    z-index: 99999;
+  }
+
+  .slick--img > img {
+    position: absolute;
+    left: 50%;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 5px solid rgba(154, 205, 50, 0.3);
+    transform: translate(-50%, -50%);
+  }
+
+  .slick--img > p {
+    padding-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .slick--container .slick-prev::before,
+  .slick--container .slick-next::before {
+    font-family: FontAwesome;
+    color: black;
+  }
+
+  .slick--container .slick-prev::before {
+    content: "\f137";
+  }
+
+  .slick--container .slick-next::before {
+    content: "\f138";
+  }
+
+  .slick--container .slick-arrow:before {
+    font-size: 20px;
+  }
+
+  .slick--container .slick-next {
+    right: 50%;
+    top: 100%;
+    transform: translateX(200%);
+  }
+
+  .slick--container .slick-prev {
+    left: 50%;
+    z-index: 999;
+    top: 100%;
+    transform: translateX(-200%);
+  }
+
+  .container-slick {
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    background-image: url(./image/flowerbanner.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 1rem 0;
+  }
+
+  .counter {
+    margin: 10rem 0;
+    text-align: center;
+    background-color: blue;
+    margin: auto;
+    width: fit-content;
+  }
+
+  .video {
+    padding: 3rem 0;
+    margin: 5rem 0;
+  }
+
+  .video--container {
+    width: 80%;
+    margin: auto;
+    max-width: 1320px;
+  }
+
+  .video--content {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+  }
+
+  .video--text {
+    color: rgb(204, 51, 0);
+
+    > p:nth-of-type(1) {
+      font-size: 4rem;
+      font-weight: 900;
+      text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
+      > span {
+        border-bottom: 4px solid rgb(204, 51, 0);
+      }
+    }
+
+    > p:nth-of-type(2) {
+      font-size: 4rem;
+      font-weight: 900;
+      text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
+    }
+
+    > p:nth-of-type(3) {
+      width: fit-content;
+      font-size: 5rem;
+      font-weight: 900;
+      text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
+      border-bottom: 4px solid rgb(204, 51, 0);
+    }
+  }
+
+  .youtubevideo {
+    > iframe {
+      /* box-shadow: 0px -1px 95px 75px rgba(0, 0, 0, 0.82);
+      -webkit-box-shadow: 0px -1px 95px 75px rgba(0, 0, 0, 0.82);
+      -moz-box-shadow: 0px -1px 95px 75px rgba(0, 0, 0, 0.82); */
+
+      box-shadow: 0px -1px 95px 134px rgba(0, 0, 0, 0.82);
+      -webkit-box-shadow: 0px -1px 95px 134px rgba(0, 0, 0, 0.82);
+      -moz-box-shadow: 0px -1px 95px 134px rgba(0, 0, 0, 0.82);
+      border: 2px solid blue;
+    }
+  }
+</style>
+
+<div ng-controller="homeController">
+  <div class="body--overlay"></div>
+  <div class="body--newsletter">
+    <div class="newsletter-container">
+      <p>Newsletter</p>
+      <p>Join over 1,000 people who get free and fresh content delivered automatically each time we publish</p>
+      <input type="text" placeholder="email@example.com" />
+      <button>Subscribe</button>
+      <div class="newsletter__dontshow">
+        <input type="checkbox" />
+        <span>Don't show this again</span>
+      </div>
+    </div>
+    <span class="newsletter__close">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </span>
+  </div>
+
+  <slick infinite="true" slides-to-show="1" slides-to-scroll="1" class="my-slick slider" settings="slickConfig">
+    <div class="carousel-card-1">
+      <img src="./image/1.png" alt="" />
+      <div class="carousel-container">
+        <h2>Plant Trend</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo asperiores accusantium sapiente temporibus.</p>
+        <button>Shop <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+      </div>
+    </div>
+    <div class="carousel-card-2">
+      <img src="./image/2.png" alt="" />
+      <div class="carousel-container">
+        <h2>Plant Trend</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo asperiores accusantium sapiente temporibus.</p>
+        <button>Shop <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+      </div>
+    </div>
+    <div class="carousel-card-3">
+      <img src="./image/3.png" alt="" />
+      <div class="carousel-container">
+        <h2>Plant Trend</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo asperiores accusantium sapiente temporibus.</p>
+        <button>Shop <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </slick>
+
+  <div class="benefit">
+    <div class="benefit--container">
+      <div class="benefit--card benefit--freeship">
+        <i class="fa fa-phone" aria-hidden="true"></i>
+        <div class="benefit--text">
+          <p>FREE SHIPPING</p>
+          <p>ALL ORDER OVER $100</p>
+        </div>
+      </div>
+      <div class="benefit--card benefit--support">
+        <i class="fa fa-phone" aria-hidden="true"></i>
+        <div class="benefit--text">
+          <p>24/7 DEDICATED SUPPORT</p>
+          <p>0123 456 789</p>
+        </div>
+      </div>
+      <div class="benefit--card benefit--money">
+        <i class="fa fa-undo" aria-hidden="true"></i>
+        <div class="benefit--text">
+          <p>MONEY BACK</p>
+          <p>IF THE ITEM DIDN’T SUIT YOU</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video">
+    <p></p>
+    <div class="video--container">
+      <div class="video--content">
+        <div class="video--text">
+          <p>PLANT <span>A TREE</span></p>
+          <p>GROW</p>
+          <p>A FUTURE</p>
+        </div>
+        <div class="video--main">
+          <iframe
+            width="591"
+            height="359"
+            class="youtubevideo shadow-lg"
+            src="https://www.youtube.com/embed/SJfpnGEMrKM"
+            title="How To Plant A Tree | PlantingTree™"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-slick">
+    <slick class="slick--container" infinite="true" slides-to-show="1" slides-to-scroll="1" settings="quoteSlick">
+      <div class="slick--item">
+        <p class="slick--quote">
+          <i class="fa fa-quote-left" aria-hidden="true"></i>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iusto omnis excepturi veritatis consequuntur ab quos saepe eos deleniti sunt voluptatum numquam itaque ex, dolorem non facere.
+          Alias, libero nihil.
+          <i class="fa fa-quote-right" aria-hidden="true"></i>
+        </p>
+        <div class="slick--img">
+          <img src="./image/client-1.jpg" alt="" />
+          <p>Leo Leo</p>
+        </div>
+      </div>
+
+      <div class="slick--item">
+        <p class="slick--quote">
+          <i class="fa fa-quote-left" aria-hidden="true"></i>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iusto omnis excepturi veritatis consequuntur ab quos saepe eos deleniti sunt voluptatum numquam itaque ex, dolorem non facere.
+          Alias, libero nihil.
+          <i class="fa fa-quote-right" aria-hidden="true"></i>
+        </p>
+        <div class="slick--img">
+          <img src="./image/client-2.jpg" alt="" />
+          <p>Mao Mao</p>
+        </div>
+      </div>
+
+      <div class="slick--item">
+        <p class="slick--quote">
+          <i class="fa fa-quote-left" aria-hidden="true"></i>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iusto omnis excepturi veritatis consequuntur ab quos saepe eos deleniti sunt voluptatum numquam itaque ex, dolorem non facere.
+          Alias, libero nihil.
+          <i class="fa fa-quote-right" aria-hidden="true"></i>
+        </p>
+        <div class="slick--img">
+          <img src="./image/client-3.jpg" alt="" />
+          <p>Fuu Fuu</p>
+        </div>
+      </div>
+    </slick>
+  </div>
+</div>

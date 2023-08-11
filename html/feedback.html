@@ -1,0 +1,150 @@
+<style>
+  .feedback--container {
+    width: 80%;
+    margin: auto;
+    max-width: 1536px;
+  }
+
+  .form {
+    background-color: blue;
+  }
+
+  /* .feedback {
+  } */
+
+  .feedback--container {
+    width: 80%;
+    max-width: 1320px;
+    margin: auto;
+
+    > p:nth-of-type(1) {
+      font-size: 3rem;
+      text-align: center;
+      border-bottom: 4px solid yellowgreen;
+      width: fit-content;
+      margin: 5rem auto;
+    }
+
+    > p:nth-of-type(2) {
+      margin-bottom: 5rem;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+
+  .feedback--content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+
+    margin: 3rem 0;
+  }
+
+  .feedback--item {
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    text-decoration: none;
+    padding: 1rem 0;
+    transition: 0.5s;
+
+    > span {
+      margin-bottom: 1rem;
+      font-weight: 900;
+      font-size: 1.3rem;
+    }
+
+    > i {
+      font-size: 2rem;
+      color: rgb(204, 51, 0);
+      align-self: center;
+      border-radius: 50%;
+      transition: 0.5s;
+    }
+
+    > i:hover {
+      transform: scale(1.5);
+    }
+  }
+
+  .feedback--item:nth-of-type(1) {
+    > i {
+      color: red;
+    }
+  }
+
+  .feedback--item:nth-of-type(2) {
+    > i {
+      color: violet;
+    }
+  }
+
+  .feedback--item:nth-of-type(3) {
+    > i {
+      color: rgb(167, 167, 44);
+    }
+  }
+
+  .feedback--item:nth-of-type(4) {
+    > i {
+      color: yellowgreen;
+    }
+  }
+
+  .feedback--item:nth-of-type(5) {
+    > i {
+      color: green;
+    }
+  }
+
+  .feedback--item:hover {
+    transform: scale(1.2);
+  }
+
+  @media screen and (max-width: 992px) {
+    .feedback--content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .feedback--content {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+</style>
+<div ng-controller="feedbackController">
+  <div class="feedback">
+    <div class="feedback--container">
+      <p>FEED BACK</p>
+      <p>
+        We value your opinion! Your feedback helps us improve and provide you with the best possible experience. Whether you have suggestions, concerns, or compliments, we want to hear from you.
+        Please take a moment to share your thoughts using the option below
+      </p>
+      <div class="feedback--content">
+        <a href="" ng-click="receiveFeedback()" class="feedback--item shadow">
+          <span>Awful</span>
+          <i class="fa-solid fa-face-tired"></i>
+        </a>
+        <a ng-click="receiveFeedback()" href="" class="feedback--item shadow">
+          <span>Bad</span>
+          <i class="fa-solid fa-face-sad-tear"></i>
+        </a>
+        <a ng-click="receiveFeedback()" href="" class="feedback--item shadow">
+          <span>Okay</span>
+          <i class="fa-solid fa-face-rolling-eyes"></i>
+        </a>
+        <a ng-click="receiveFeedback()" href="" class="feedback--item shadow">
+          <span>Satisfied</span>
+          <i class="fa-solid fa-face-grin"></i>
+        </a>
+        <a ng-click="receiveFeedback()" href="" class="feedback--item shadow">
+          <span>Very satisfied</span>
+          <i class="fa-solid fa-face-grin-hearts"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

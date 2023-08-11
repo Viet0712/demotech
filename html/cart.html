@@ -1,0 +1,94 @@
+<!-- <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+  crossorigin="anonymous"
+/>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+  crossorigin="anonymous"
+></script> -->
+
+<style>
+  td > img{
+    width: 5rem;
+  }
+
+  .submit-container{
+    text-align: end;
+    margin: 1rem 0;
+
+    > a{
+      padding: 0.5rem;
+      border: 1px solid blue;
+      text-decoration: none;
+      color: yellowgreen;
+      border-radius: 10px;
+    }
+
+    > a:hover {
+      color: white;
+      background-color: yellowgreen;
+    }
+  }
+
+  .totalBill{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cartController{
+    min-height: 800px;
+  }
+
+  table{
+    min-height: 600px;
+  }
+</style>
+
+<div class="cartController" ng-controller="cartController">
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table table-hover table-striped my-5">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Picture</th>
+            <th>Name</th>
+            <th>Total</th>
+            <th>Price</th>
+            <th>Add</th>
+            <th>Minus</th>
+          </tr>
+        </thead>
+    
+        <tbody>
+          <tr ng-repeat="item in cartData" >
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td><img ng-src="{{item[2]}}" alt=""></td>
+            <td>{{item[3]}}</td>
+            <td>{{item[4]}}</td>
+            <td>{{item[5] | number:2}} $</td>
+            <td ng-click="addQuantity(item[3])"><i class="fa fa-plus" aria-hidden="true"></i></td>
+            <td ng-click="minusQuantity(item[3])"><i class="fa fa-minus" aria-hidden="true"></i></td>
+          </tr>
+        </tbody>
+  
+  
+      </table>
+    </div>
+
+    <hr>
+
+    <div class="totalBill">
+      <p>Total</p>
+      <p>{{totalBill | number:2}} $</p>
+    </div>
+
+    <div class="submit-container"><a href="#!pay">Submit</a></div>
+  </div>
+</div>

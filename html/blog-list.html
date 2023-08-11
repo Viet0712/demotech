@@ -1,0 +1,224 @@
+<style>
+  .blog__list {
+    width: 90%;
+    margin: 1vw 5%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2vw;
+  }
+
+  .blog__item {
+    border: 0.1vw solid rgba(128, 128, 128, 0.308);
+    height: auto;
+    transition: 0.5s;
+  }
+
+  .blog__item:hover {
+    transform: scale(1.02);
+    box-shadow: 0.5vw 0.5vw 1vw rgba(128, 128, 128, 0.404);
+  }
+
+  .blog__item > a > img {
+    width: 100%;
+  }
+
+  .blog__title {
+    margin: 1vw 0;
+    font-size: 1.4vw;
+    line-height: 1.5vw;
+    height: 3vw;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+
+  .viewmore {
+    border: 0.1vw solid gray;
+    background-color: beige;
+    text-decoration: none;
+    padding: 1vw 2vw;
+    width: 80%;
+    margin: 1vw 10%;
+    font-weight: bold;
+  }
+
+  .viewmore:hover {
+    background-color: #bedd93;
+  }
+
+  .eye__view {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .page_number {
+    margin-top: 5vh;
+    font-size: 1.5rem;
+    margin-left: 38.5%;
+  }
+
+  .page_number > a {
+    display: inline-block;
+    width: 1.5vw;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    border: solid black 0.07rem;
+    margin-left: 0.5vw;
+  }
+
+  .button_page {
+    margin-top: 3vh;
+    margin-left: 33%;
+    margin-bottom: 15vh;
+  }
+
+  .button_page > a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: black;
+    margin-left: 3vw;
+  }
+
+  .button_page > a:hover {
+    color: cornflowerblue;
+  }
+
+  .product__sort__search {
+    width: 40%;
+    margin: 1vw 0 0 30%;
+  }
+
+  .product__sort__search > input {
+    width: 100%;
+    height: 3vw;
+    padding: 0 1vw;
+  }
+
+  #number {
+    width: fit-content;
+    padding: 0 1vw;
+  }
+
+  @media screen and (max-width: 992px) {
+    .blog__title {
+      margin: 1vw 0;
+      font-size: 1.7vw;
+      line-height: 2vw;
+      height: 4vw;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      padding-left: 1vw;
+      padding-right: 1vw;
+    }
+
+    .blog__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .viewmore {
+      font-size: 2vw;
+    }
+
+    .eye__view {
+      font-size: 1.8vw;
+    }
+
+    .product__sort__search {
+      width: 60%;
+      margin: 1vw 0 0 20%;
+    }
+
+    .product__sort__search > input {
+      width: 100%;
+      height: 4vw;
+      padding: 0 1vw;
+    }
+  }
+
+  @media screen and (max-width: 687px) {
+    .blog__title {
+      margin: 1vw 0;
+      font-size: 2.5vw;
+      line-height: 2.7vw;
+      height: 8.1vw;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      padding-left: 1vw;
+      padding-right: 1vw;
+    }
+
+    .blog__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .eye__view > span,
+    .view__user,
+    .i.eye__view > span > i {
+      font-size: 2.5vw;
+    }
+
+    .product__sort__search {
+      width: 80%;
+      margin: 1vw 0 0 10%;
+    }
+
+    .product__sort__search > input {
+      width: 100%;
+      height: 6vw;
+      padding: 0 1vw;
+    }
+  }
+</style>
+
+<div ng-controller="blog_list">
+  <div class="product__sort__search">
+    <input ng-change="setshow_search_or_page()" ng-change="getValue()" ng-model=" input" type="text" name="search"
+      id="search" />
+  </div>
+  <div class="blog__list" ng-repeat="page in pages_blog" ng-show="$index == currentPage_blog">
+    <div class="blog__item" ng-repeat="infor in page" ng-model="showpage" ng-show="showpage">
+      <a href="#!blog-infor" ng-click="getname(infor)"><img src=" {{infor.img1}}" alt="" /></a>
+      <p class="blog__title">{{infor.title}}</p>
+      <button class="viewmore"><a href="#!blog-infor" ng-click="getname(infor)">View More</a></button>
+      <div class="eye__view">
+        <span><i class="fa-regular fa-eye"></i><span class="view__user">1923</span></span>
+        <span class="date__post">Date post: 10/08/2023</span>
+      </div>
+    </div>
+  </div>
+  <div class="blog__list" ng-repeat="page in pages_search_blog" ng-show="$index == currentPage_blog">
+    <div class="blog__item" ng-repeat="infor in page|searchBlog : input" ng-model="showsearch" ng-show="showsearch">
+      <a href="#!blog-infor" ng-click="getname(infor)"><img src=" {{infor.img1}}" alt="" /></a>
+      <p class="blog__title">{{infor.title}}</p>
+      <button class="viewmore">View More</button>
+      <div class="eye__view">
+        <span><i class="fa-regular fa-eye"></i><span class="view__user">1923</span></span>
+        <span class="date__post">Date post: 10/08/2023</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page_number" ng-show="page_number">
+    Page.
+    <a href="" id="number" ng-show="page_number" ng-click="click_number($index)" ng-model="number" ng-style="{ 'background-color': $index === pagenumber ? backgroundcolor : '','color': $index === pagenumber ? color : ''
+            }" ng-repeat="item in pages_blog">{{$index+1}}.</a>
+  </div>
+  <div class="page_number" ng-show="page_number_search">
+    Page.
+    <a href="" id="number" ng-click="click_number($index)" ng-model="number" ng-style="{ 'background-color': $index === pagenumber ? backgroundcolor : '','color': $index === pagenumber ? color : ''
+            }" ng-repeat="item in pages_search_blog">{{$index+1}}.</a>
+  </div>
+  <div class="button_page" ng-model="button_page">
+    <a href="" ng-click="previewpage($index)">Preview.</a>
+    <a href="" ng-click="nextpage($index)">Next.</a>
+  </div>
+</div>
